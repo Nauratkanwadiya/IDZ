@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bln.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="container">
+            
+        <button id="btn"><i class='bx bxs-left-arrow-alt' ></i></button>
+
+        <div class="main_machine">
+            <div class="first"  onclick="scrap(this)" ondblclick="scrap2(this)">
+                <img src="Symbol 320001.png" alt="" id="air_pump" class="machine1" >
+            </div>
+            <div class="second">
+                <img src="Symbol 320002.png" alt="" id="air" class="machine2">
+                <img src="Symbol 320003.png" alt="" id="air_container" class="machine3">
+            </div>
+        </div>
+
+        <div class="ballons">
+            <div id="ballons1" class="bln">
+                <img src="Symbol 100001.png" alt="" class="ballons_type">
+                <img src="Symbol 10001.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-1">
+
+            </div>
+            
+            <div id="ballons2" class="bln">
+                <img src="Symbol 100002.png" alt="" class="ballons_type">
+                <img src="Symbol 10002.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-2">
+            </div>
+           
+            <div id="ballons3" class="bln">
+                <img src="Symbol 100003.png" alt="" class="ballons_type">
+                <img src="Symbol 10003.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-3">
+
+            </div>
+           
+            <div id="ballons4" class="bln">
+                <img src="Symbol 100004.png" alt="" class="ballons_type">
+                <img src="Symbol 10004.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-4">
+
+            </div>
+
+            <div id="ballons5" class="bln">
+                <img src="Symbol 100005.png" alt="" class="ballons_type">
+                <img src="Symbol 10005.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-5">
+
+            </div>
+
+            <div id="ballons6" class="bln">
+                <img src="Symbol 100006.png" alt="" class="ballons_type">
+                <img src="Symbol 10006.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-6">
+
+            </div>
+
+            <div id="ballons7" class="bln">
+                <img src="Symbol 100007.png" alt="" class="ballons_type">
+                <img src="Symbol 10007.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-7">
+
+            </div>
+
+            <div id="ballons8" class="bln">
+                <img src="Symbol 100008.png" alt="" class="ballons_type">
+                <img src="Symbol 10008.png" alt="" class="alphabate">
+                <img src="Symbol 100011.png" alt="" class="rope" id="b-8">
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- <script>
+        function scrap(x){
+            var x = document.getElementById('air_pump')
+            x.style.marginTop = "10px";
+            x.style.transition= "0.2s";
+        }
+            function scrap2(y){
+            var y = document.getElementById('air_pump')
+            y.style.marginTop = "-10px";
+            y.style.transition= "0.2s";
+        }
+
+       
+        
+        let popped =0;
+        document.addEventListener("click",function(element){
+            if(element.target.className=='bln'){
+                element.style.background = "transparent";
+                element.style.textContent = "WOW!";
+                popped++;
+                Checkpop();
+
+            }
+        });
+        function remove(element){
+            element.target.remove('click',function(){
+
+            })
+        };
+        function Checkpop(){
+            if(popped==4){
+                comsole.log("all pop");
+                let ball = document.querySelector(".ballons");
+                ball.innerHTML=" ";
+                
+            }
+        }
+        
+
+        
+    </script> -->
+
+
+
+
+    <script>
+        function scrap(x) {
+            x.style.marginTop = "10px";
+            x.style.transition = "0.2s";
+        }
+
+        function scrap2(y) {
+            y.style.marginTop = "-10px";
+            y.style.transition = "0.2s";
+        }
+
+        let popped = 0;
+        const maxPops = 8; // Set this to the number of balloons
+
+        document.addEventListener("click", function (element) {
+            if (element.target.classList.contains('bln')) {
+                element.target.style.background = "transparent";
+                element.target.style.textContent = "WOW!";
+                element.target.remove(); // Remove the balloon element
+                popped++;
+                Checkpop();
+            }
+        });
+
+        function Checkpop() {
+            if (popped === maxPops) {
+                console.log("all pop"); // Fixed typo from "comsole.log"
+                let ball = document.querySelector(".ballons");
+                ball.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
